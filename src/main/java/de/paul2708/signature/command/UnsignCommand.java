@@ -26,7 +26,7 @@ public class UnsignCommand extends AbstractCommand {
             player.sendMessage(configuration.getMessage("no_item_in_hand"));
             return;
         }
-        if (!configuration.isAllowed("unsign")) {
+        if (!player.isOp() && !configuration.isAllowed("unsign")) {
             player.sendMessage(configuration.getMessage("unsign_not_allowed"));
             return;
         }
